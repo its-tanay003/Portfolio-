@@ -68,7 +68,7 @@ const Hero = () => {
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', background: 'rgba(14, 165, 233, 0.1)', border: '1px solid var(--glass-border)', borderRadius: '20px', color: 'var(--accent-primary)', marginBottom: '1.5rem', fontWeight: '600', fontSize: '0.9rem', backdropFilter: 'blur(10px)' }}
             >
               <Shield size={16} />
-              <span>Cybersecurity Specialist & Hackathon Enthusiast</span>
+              <span>Full Stack Developer & Problem Solver</span>
             </motion.div>
             
             <h1 style={{ marginBottom: '1rem', lineHeight: '1.1', fontSize: '3.5rem' }}>
@@ -77,7 +77,7 @@ const Hero = () => {
             </h1>
             
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', marginBottom: '2.5rem', maxWidth: '550px', lineHeight: '1.8' }}>
-              I'm <strong style={{ color: 'var(--text-primary)' }}>Tanay Tanishk</strong>. Engineering secure digital environments and impactful IoT solutions through innovative problem-solving, continuous learning, and a passion for real-world application.
+              I'm <strong style={{ color: 'var(--text-primary)' }}>T.Dinesh</strong>. A Computer Science Engineering student passionate about building scalable web applications and intuitive user experiences through continuous learning and innovative problem-solving.
             </p>
             
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -125,7 +125,7 @@ const Hero = () => {
           {/* Photo Placeholder */}
           <motion.img
             src="/photo.jpg"
-            alt="Tanay Tanishk"
+            alt="T.Dinesh"
             style={{
                 position: 'absolute',
                 top: '-90%',

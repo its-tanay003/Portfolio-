@@ -60,7 +60,7 @@ function App() {
       <footer style={{ background: 'rgba(2, 4, 10, 0.9)', padding: '2rem 0', textAlign: 'center', borderTop: '1px solid var(--border-color)', position: 'relative', zIndex: 10 }}>
         <div className="container">
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-            © {new Date().getFullYear()} Tanay Tanishk. All rights reserved.
+            © {new Date().getFullYear()} T.Dinesh. All rights reserved.
           </p>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '0.5rem', opacity: 0.7 }}>
             Built with React, R3F, Framer Motion, and Lenis.

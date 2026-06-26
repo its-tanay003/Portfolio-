@@ -1,16 +1,94 @@
-# React + Vite
+# Tanay Tanishk - Full Stack Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive, immersive, and premium portfolio website showcasing the skills, projects, and experiences of **Tanay Tanishk**, a Computer Science Engineering Student and Full Stack Developer.
 
-Currently, two official plugins are available:
+This project is built from scratch with modern web design aesthetics, featuring advanced 3D elements, premium micro-animations, glassmorphic interfaces, and smooth interactions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **3D CyberCore Hero Section**: Dynamic, interactive 3D icosahedron core rendered in real-time using Three.js and React Three Fiber.
+* **Ambient Interactivity**: Smooth custom cursor effects and immersive particles background using `@tsparticles`.
+* **Dynamic Physics & Tilt Effects**: Interactive 3D tilt effects on project and skill cards via `react-parallax-tilt`.
+* **Fluid Motion & Scroll**: Implemented smooth inertial scrolling using Lenis, combined with custom-tuned Framer Motion transitions.
+* **Responsive Glassmorphism**: Responsive design built with custom CSS variables, custom grid layouts, and semi-transparent blur-filtered layers (glassmorphic aesthetic).
+* **Comprehensive Sections**:
+  * **Hero**: Dynamic 3D CyberCore and profile highlights.
+  * **About**: Background info, goals, and professional statement.
+  * **Projects**: Displays patent-pending hardware-software systems and ethical hacking/security projects.
+  * **Skills**: Organized Technical Arsenal categorization with hover tilt.
+  * **Experience & Certifications**: Chronological journey and accredited credentials.
+  * **Contact**: Sleek interface for inquiries.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technology Stack
+
+### Core
+
+* **Library**: [React 19](https://react.dev/)
+* **Build Tool**: [Vite](https://vite.dev/)
+* **Styles**: Vanilla CSS (Tailored Design Tokens & Glassmorphism)
+
+### Libraries & Integration
+
+* **3D Rendering**: [Three.js](https://threejs.org/), [@react-three/fiber](https://r3f.docs.pmnd.rs/), [@react-three/drei](https://github.com/pmndrs/drei)
+* **Animations**: [Framer Motion](https://www.framer.com/motion/)
+* **Smooth Scroll**: [@studio-freight/lenis](https://github.com/darkroomengineering/lenis)
+* **Particles**: [@tsparticles/react](https://github.com/tsparticles/react) & `@tsparticles/slim`
+* **Icons**: [Lucide React](https://lucide.dev/)
+* **Card Physics**: [React Parallax Tilt](https://github.com/gregberge/react-parallax-tilt)
+
+---
+
+## 📦 Getting Started
+
+Follow these steps to run the portfolio locally on your machine.
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) installed.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/its-tanay003/Portfolio-.git
+   cd Portfolio-
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+### Development
+
+Run the development server locally:
+
+```bash
+npm run dev
+```
+
+Open your browser and navigate to `http://localhost:5173`.
+
+### Production Build
+
+To build the application for production deployment:
+
+```bash
+npm run build
+```
+
+This compiles the assets into a highly optimized production bundle inside the `dist` directory.
+
+### Preview Build
+
+Preview the built production bundle locally:
+
+```bash
+npm run preview
+```

@@ -77,7 +77,7 @@ const Hero = () => {
             </h1>
             
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', marginBottom: '2.5rem', maxWidth: '550px', lineHeight: '1.8' }}>
-              I'm <strong style={{ color: 'var(--text-primary)' }}>T.Dinesh</strong>. A Computer Science Engineering student passionate about building scalable web applications and intuitive user experiences through continuous learning and innovative problem-solving.
+              I'm <strong style={{ color: 'var(--text-primary)' }}>Tanay Tanishk</strong>. A Computer Science Engineering student passionate about building scalable web applications and intuitive user experiences through continuous learning and innovative problem-solving.
             </p>
             
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -125,7 +125,7 @@ const Hero = () => {
           {/* Photo Placeholder */}
           <motion.img
             src="/photo.jpg"
-            alt="T.Dinesh"
+            alt="Tanay Tanishk"
             style={{
                 position: 'absolute',
                 top: '-90%',

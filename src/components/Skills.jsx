@@ -11,13 +11,13 @@ const Skills = () => {
       color: "#00f0ff",
       bg: "rgba(0, 240, 255, 0.1)",
       skills: [
-        "Python",
-        "SQL",
-        "HTML5 / CSS3",
-        "JavaScript",
-        "C / C++",
-        "Rust",
-        "Bash Scripting",
+        { name: "Python", level: "Advanced / Threat Scripting", pct: 95 },
+        { name: "SQL", level: "DB Exploitation & Querying", pct: 90 },
+        { name: "Bash Scripting", level: "Automated Recon Pipelines", pct: 92 },
+        { name: "C / C++", level: "Systems & Memory Architecture", pct: 85 },
+        { name: "JavaScript", level: "Full-Stack Web & Node", pct: 88 },
+        { name: "Rust", level: "Secure Systems Programming", pct: 80 },
+        { name: "HTML5 / CSS3", level: "Modern Frontend Systems", pct: 92 },
       ],
     },
     {
@@ -27,13 +27,12 @@ const Skills = () => {
       color: "#f43f5e",
       bg: "rgba(244, 63, 94, 0.1)",
       skills: [
-        "Kali Linux",
-        "Nuclei",
-        "Subfinder",
-        "Burp Suite Pro",
-        "Metasploit",
-        "Nmap",
-        "Wireshark",
+        { name: "Kali Linux", level: "Primary Offensive OS", pct: 95 },
+        { name: "Nuclei", level: "Automated CVE Template Scans", pct: 92 },
+        { name: "Subfinder", level: "Asset Discovery & Recon", pct: 90 },
+        { name: "Burp Suite Pro", level: "Web App Pen Testing", pct: 88 },
+        { name: "Metasploit", level: "Controlled Exploit Harness", pct: 85 },
+        { name: "Nmap & Wireshark", level: "Packet Analysis & Mapping", pct: 90 },
       ],
     },
     {
@@ -43,12 +42,11 @@ const Skills = () => {
       color: "#a855f7",
       bg: "rgba(168, 85, 247, 0.1)",
       skills: [
-        "Adversarial ML",
-        "Prompt Injection",
-        "Garak Framework",
-        "OWASP LLM Top 10",
-        "LLM Red Teaming",
-        "Data Exfiltration Def",
+        { name: "Adversarial ML", level: "Model Evasion & Poisoning", pct: 90 },
+        { name: "Prompt Injection", level: "Direct / Indirect Jailbreaks", pct: 95 },
+        { name: "Garak Framework", level: "Automated LLM Security Test", pct: 92 },
+        { name: "OWASP LLM Top 10", level: "Vulnerability Compliance", pct: 94 },
+        { name: "Data Exfiltration Def", level: "System Prompt Hardening", pct: 88 },
       ],
     },
     {
@@ -56,14 +54,13 @@ const Skills = () => {
       id: "RED_TEAMING",
       icon: <Lock size={22} />,
       color: "#10b981",
-      bg: "rgba(16, 185, 129, 0.1)",
+      bg: "rgba(168, 85, 129, 0.1)",
       skills: [
-        "Red Teaming",
-        "Web Pen Testing",
-        "Network Security",
-        "Active Directory",
-        "Recon Pipelines",
-        "Vulnerability Scans",
+        { name: "Red Teaming", level: "Adversary Simulation", pct: 88 },
+        { name: "Web Pen Testing", level: "XSS, SQLi, CSRF, IDOR", pct: 92 },
+        { name: "Network Security", level: "Protocols & Firewall Audits", pct: 90 },
+        { name: "Active Directory", level: "Domain Recon & Exploitation", pct: 82 },
+        { name: "Bug Bounty Hunting", level: "Live Production Target Scans", pct: 88 },
       ],
     },
     {
@@ -73,11 +70,10 @@ const Skills = () => {
       color: "#fbbf24",
       bg: "rgba(251, 191, 36, 0.1)",
       skills: [
-        "AWS IAM",
-        "GCP Security",
-        "Kubernetes",
-        "CI/CD Security",
-        "Cloud Architecture",
+        { name: "AWS IAM", level: "Least-Privilege Policy Design", pct: 88 },
+        { name: "GCP Security", level: "Cloud Asset & Auth Hardening", pct: 85 },
+        { name: "Kubernetes", level: "Container Cluster Defense", pct: 80 },
+        { name: "CI/CD Security", level: "Automated SAST / DAST Gates", pct: 86 },
       ],
     },
     {
@@ -87,11 +83,10 @@ const Skills = () => {
       color: "#38bdf8",
       bg: "rgba(56, 189, 248, 0.1)",
       skills: [
-        "Zero-Trust Architecture",
-        "Strategic Problem Solving",
-        "High-Pressure Execution",
-        "Cross-Functional Leadership",
-        "Continuous Learning",
+        { name: "Zero-Trust Mindset", level: "Never Trust, Always Verify", pct: 96 },
+        { name: "Strategic Analytics", level: "Mathematical Problem Solving", pct: 95 },
+        { name: "High-Pressure Exec", level: "Hackathon & Incident Response", pct: 92 },
+        { name: "Cross-Team Leadership", level: "CREST & TechFest Direction", pct: 90 },
       ],
     },
   ];
@@ -127,7 +122,7 @@ const Skills = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          Technical Arsenal & Tooling
+          Technical Arsenal & Capability Matrix
         </motion.h2>
 
         <motion.div
@@ -140,12 +135,12 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Tilt
-                tiltMaxAngleX={6}
-                tiltMaxAngleY={6}
+                tiltMaxAngleX={4}
+                tiltMaxAngleY={4}
                 glareEnable={true}
-                glareMaxOpacity={0.12}
+                glareMaxOpacity={0.08}
                 glarePosition="all"
-                scale={1.02}
+                scale={1.01}
                 transitionSpeed={1000}
                 style={{ height: "100%" }}
               >
@@ -173,7 +168,7 @@ const Skills = () => {
                       display: "flex",
                       alignItems: "center",
                       gap: "0.75rem",
-                      marginBottom: "1.2rem",
+                      marginBottom: "1.4rem",
                     }}
                   >
                     <div
@@ -196,36 +191,41 @@ const Skills = () => {
                     </h3>
                   </div>
 
+                  {/* Visual Capability Meters */}
                   <div
                     style={{
                       display: "flex",
-                      flexWrap: "wrap",
-                      gap: "0.45rem",
+                      flexDirection: "column",
+                      gap: "0.85rem",
                       marginTop: "auto",
                     }}
                   >
                     {category.skills.map((skill, sIndex) => (
-                      <motion.span
-                        key={sIndex}
-                        whileHover={{
-                          scale: 1.05,
-                          backgroundColor: category.bg,
-                          borderColor: category.color,
-                          color: "#fff",
-                        }}
-                        style={{
-                          padding: "0.3rem 0.65rem",
-                          background: "rgba(3, 7, 18, 0.7)",
-                          border: "1px solid rgba(255, 255, 255, 0.08)",
-                          borderRadius: "4px",
-                          fontFamily: "var(--font-mono)",
-                          fontSize: "0.8rem",
-                          color: "var(--text-secondary)",
-                          cursor: "default",
-                        }}
-                      >
-                        $ {skill}
-                      </motion.span>
+                      <div key={sIndex} style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.82rem", fontFamily: "var(--font-mono)" }}>
+                          <span style={{ color: "var(--text-primary)", fontWeight: "600" }}>$ {skill.name}</span>
+                          <span style={{ color: category.color, fontSize: "0.75rem" }}>{skill.pct}%</span>
+                        </div>
+                        
+                        {/* Visual Progress Bar */}
+                        <div style={{ width: "100%", height: "4px", background: "rgba(255, 255, 255, 0.08)", borderRadius: "2px", overflow: "hidden", position: "relative" }}>
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.pct}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: sIndex * 0.05, ease: "easeOut" }}
+                            style={{
+                              height: "100%",
+                              background: `linear-gradient(90deg, ${category.color}80, ${category.color})`,
+                              boxShadow: `0 0 8px ${category.color}`,
+                              borderRadius: "2px",
+                            }}
+                          />
+                        </div>
+                        <span style={{ fontSize: "0.72rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
+                          {skill.level}
+                        </span>
+                      </div>
                     ))}
                   </div>
                 </div>

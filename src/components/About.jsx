@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { BookOpen, ShieldCheck, GraduationCap, Award, Compass, Heart, Terminal, Cpu } from "lucide-react";
+import { BookOpen, ShieldCheck, GraduationCap, Award, Compass, Heart, Terminal, Cpu, Building, CheckCircle2 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
@@ -51,6 +51,75 @@ const About = () => {
         >
           About & Engineering Profile
         </motion.h2>
+
+        {/* AI Threat Lab Visual Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8 }}
+          style={{ marginBottom: "3.5rem" }}
+        >
+          <div
+            className="cyber-card"
+            style={{
+              padding: "0",
+              overflow: "hidden",
+              position: "relative",
+              borderTop: "3px solid var(--accent-cyan)",
+              background: "#020617",
+            }}
+          >
+            <div style={{ position: "relative", width: "100%", height: "260px", overflow: "hidden" }}>
+              <img
+                src="/ai_threat_lab.jpg"
+                alt="AI Threat Intelligence Laboratory"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center 40%",
+                  filter: "brightness(0.85) contrast(1.15)",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "linear-gradient(to right, rgba(3, 7, 18, 0.95) 0%, rgba(3, 7, 18, 0.65) 50%, rgba(3, 7, 18, 0.8) 100%)",
+                }}
+              />
+              
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  padding: "2.5rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  zIndex: 2,
+                  maxWidth: "700px",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
+                  <span className="cyber-tag" style={{ background: "rgba(0, 240, 255, 0.15)" }}>
+                    <Building size={13} /> LPU AI THREAT LAB
+                  </span>
+                  <span className="cyber-tag green">
+                    <CheckCircle2 size={13} /> ACTIVE RESEARCH ASSISTANT
+                  </span>
+                </div>
+                <h3 style={{ fontSize: "1.6rem", color: "#fff", marginBottom: "0.5rem" }}>
+                  Advancing Adversarial ML & Defensive Security Architectures
+                </h3>
+                <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                  Investigating enterprise LLM prompt vulnerabilities, zero-day threat models, and automated defensive mitigations alongside top-tier cybersecurity researchers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         <div
           className="grid"

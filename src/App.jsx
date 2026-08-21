@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import CyberTerminal from './components/CyberTerminal';
 import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
@@ -13,7 +12,7 @@ import Contact from './components/Contact';
 import ParticlesBackground from './components/ParticlesBackground';
 import CustomCursor from './components/CustomCursor';
 import Preloader from './components/Preloader';
-import { Shield, Lock, Terminal } from 'lucide-react';
+import { Shield, Lock, Activity } from 'lucide-react';
 
 function App() {
   useEffect(() => {
@@ -65,7 +64,6 @@ function App() {
 
       <main>
         <Hero />
-        <CyberTerminal />
         <About />
         <Skills />
         <Experience />
@@ -80,7 +78,7 @@ function App() {
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             <span className="cyber-tag"><Shield size={12} /> ZERO_TRUST_MINDSET</span>
             <span className="cyber-tag green"><Lock size={12} /> ENCRYPTED_ENDPOINT</span>
-            <span className="cyber-tag purple"><Terminal size={12} /> SEC_OPS_CONSOLE</span>
+            <span className="cyber-tag purple"><Activity size={12} /> SYSTEM_ONLINE</span>
           </div>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontFamily: 'var(--font-mono)' }}>
             © {new Date().getFullYear()} Tanay Tanishk // AI-Enhanced Ethical Hacker & Security Engineer.

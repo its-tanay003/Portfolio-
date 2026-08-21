@@ -7,7 +7,6 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navItems = [
-    { name: 'Terminal', href: '#terminal-section' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },

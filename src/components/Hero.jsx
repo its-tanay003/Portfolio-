@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Shield, ChevronDown, Terminal, Lock, Activity } from 'lucide-react';
+import { Shield, ChevronDown, Lock, Activity } from 'lucide-react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Icosahedron, MeshDistortMaterial, Float, Environment, ContactShadows } from '@react-three/drei';
 
@@ -82,11 +82,11 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             style={{ y: y1 }}
           >
-            {/* Terminal Prompt Badge */}
+            {/* Role Badge */}
             <motion.div 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -94,15 +94,15 @@ const Hero = () => {
                 padding: '0.45rem 1rem',
                 background: 'rgba(0, 240, 255, 0.08)',
                 border: '1px solid var(--border-color)',
-                borderRadius: '6px',
+                borderRadius: '20px',
                 marginBottom: '1.5rem',
                 fontFamily: 'var(--font-mono)',
-                fontSize: '0.82rem',
+                fontSize: '0.85rem',
                 color: 'var(--accent-cyan)'
               }}
             >
-              <Terminal size={15} />
-              <span>~/sec-ops/tanay $ ./initiate_defense_matrix.sh</span>
+              <Shield size={16} />
+              <span>AI-Enhanced Ethical Hacker & Security Engineer</span>
             </motion.div>
             
             <h1 style={{ marginBottom: '0.8rem', lineHeight: '1.08', fontSize: 'clamp(2.4rem, 5vw, 3.8rem)' }}>
@@ -113,13 +113,13 @@ const Hero = () => {
                 WebkitTextFillColor: 'transparent',
                 display: 'inline-block'
               }}>
-                AI-Enhanced Ethical Hacker
+                Cybersecurity & AI Defense
               </span>
             </h1>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.2rem', fontFamily: 'var(--font-mono)', fontSize: '0.95rem', color: 'var(--accent-green)' }}>
               <Lock size={16} />
-              <span>Cybersecurity Engineer • B.Tech CSE @ LPU</span>
+              <span>B.Tech CSE (Cybersecurity) • LPU (Top 1% Cohort)</span>
             </div>
             
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', marginBottom: '2rem', maxWidth: '580px', lineHeight: '1.75' }}>
@@ -136,12 +136,12 @@ const Hero = () => {
                 <Shield size={16} /> View Security Projects
               </motion.a>
               <motion.a 
-                href="#terminal-section" 
+                href="#experience" 
                 className="btn btn-outline"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
-                <Terminal size={16} /> Open Cyber Console
+                Experience & Track Record
               </motion.a>
               <motion.a 
                 href="#contact" 

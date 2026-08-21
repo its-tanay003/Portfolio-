@@ -1,5 +1,4 @@
-import React from "react";
-import { Mail, Code, User, Send, MapPin } from "lucide-react";
+import { Mail, Code, User, Send, MapPin, Phone, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
@@ -18,7 +17,7 @@ const Contact = () => {
 
         <div
           className="grid grid-2"
-          style={{ gap: "4rem", alignItems: "center" }}
+          style={{ gap: "4rem", alignItems: "flex-start" }}
         >
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -36,178 +35,231 @@ const Contact = () => {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Let's build something secure.
+              Let's Build & Secure Together.
             </h3>
             <p
               style={{
                 color: "var(--text-secondary)",
-                marginBottom: "3rem",
-                fontSize: "1.1rem",
+                marginBottom: "2.5rem",
+                fontSize: "1.05rem",
                 lineHeight: "1.8",
               }}
             >
-              Whether you have a question, an internship opportunity, or just
-              want to talk about cybersecurity, my inbox is always open.
+              Whether you are looking for a cybersecurity intern for Summer 2027, want to collaborate on adversarial ML defense, discuss bug bounties, or explore patent-pending IoT health systems, I’d love to connect.
             </p>
 
             <div
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1.5rem",
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+                gap: "1.2rem",
               }}
             >
+              {/* Email */}
               <motion.a
                 href="mailto:tkkrtanay00@gmail.com"
-                whileHover={{ x: 10 }}
+                whileHover={{ x: 6 }}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "1.5rem",
+                  gap: "1rem",
                   textDecoration: "none",
                   color: "var(--text-primary)",
+                  padding: "0.85rem",
+                  background: "rgba(14, 165, 233, 0.05)",
+                  border: "1px solid rgba(14, 165, 233, 0.2)",
+                  borderRadius: "12px",
                 }}
               >
                 <div
                   style={{
-                    padding: "1rem",
-                    background: "rgba(14, 165, 233, 0.1)",
-                    borderRadius: "12px",
+                    padding: "0.65rem",
+                    background: "rgba(14, 165, 233, 0.15)",
+                    borderRadius: "10px",
                     color: "var(--accent-primary)",
-                    border: "1px solid rgba(14, 165, 233, 0.2)",
                   }}
                 >
-                  <Mail size={24} />
+                  <Mail size={20} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: "1.1rem", marginBottom: "0.2rem" }}>
-                    Email
-                  </h4>
-                  <span
-                    style={{
-                      color: "var(--text-secondary)",
-                      fontSize: "0.95rem",
-                    }}
-                  >
+                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Email</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
                     tkkrtanay00@gmail.com
                   </span>
                 </div>
               </motion.a>
 
+              {/* Phone */}
               <motion.a
-                href="https://www.linkedin.com/in/tanay-t-963414378/"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ x: 10 }}
+                href="tel:+918368211098"
+                whileHover={{ x: 6 }}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "1.5rem",
+                  gap: "1rem",
                   textDecoration: "none",
                   color: "var(--text-primary)",
+                  padding: "0.85rem",
+                  background: "rgba(16, 185, 129, 0.05)",
+                  border: "1px solid rgba(16, 185, 129, 0.2)",
+                  borderRadius: "12px",
                 }}
               >
                 <div
                   style={{
-                    padding: "1rem",
-                    background: "rgba(14, 165, 233, 0.1)",
-                    borderRadius: "12px",
-                    color: "var(--accent-primary)",
-                    border: "1px solid rgba(14, 165, 233, 0.2)",
+                    padding: "0.65rem",
+                    background: "rgba(16, 185, 129, 0.15)",
+                    borderRadius: "10px",
+                    color: "var(--accent-secondary)",
                   }}
                 >
-                  <User size={24} />
+                  <Phone size={20} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: "1.1rem", marginBottom: "0.2rem" }}>
-                    LinkedIn
-                  </h4>
-                  <span
-                    style={{
-                      color: "var(--text-secondary)",
-                      fontSize: "0.95rem",
-                    }}
-                  >
-                    linkedin.com/in/tanay-t-963414378
+                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Phone</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
+                    +91 83682-11098
                   </span>
                 </div>
               </motion.a>
 
+              {/* LinkedIn */}
+              <motion.a
+                href="https://www.linkedin.com/in/tanay-tanishk"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 6 }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  textDecoration: "none",
+                  color: "var(--text-primary)",
+                  padding: "0.85rem",
+                  background: "rgba(139, 92, 246, 0.05)",
+                  border: "1px solid rgba(139, 92, 246, 0.2)",
+                  borderRadius: "12px",
+                }}
+              >
+                <div
+                  style={{
+                    padding: "0.65rem",
+                    background: "rgba(139, 92, 246, 0.15)",
+                    borderRadius: "10px",
+                    color: "#8b5cf6",
+                  }}
+                >
+                  <User size={20} />
+                </div>
+                <div>
+                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>LinkedIn</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
+                    in/tanay-tanishk
+                  </span>
+                </div>
+              </motion.a>
+
+              {/* GitHub */}
               <motion.a
                 href="https://github.com/its-tanay003"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ x: 10 }}
+                whileHover={{ x: 6 }}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "1.5rem",
+                  gap: "1rem",
                   textDecoration: "none",
                   color: "var(--text-primary)",
+                  padding: "0.85rem",
+                  background: "rgba(255, 255, 255, 0.03)",
+                  border: "1px solid var(--border-color)",
+                  borderRadius: "12px",
                 }}
               >
                 <div
                   style={{
-                    padding: "1rem",
-                    background: "rgba(14, 165, 233, 0.1)",
-                    borderRadius: "12px",
-                    color: "var(--accent-primary)",
-                    border: "1px solid rgba(14, 165, 233, 0.2)",
+                    padding: "0.65rem",
+                    background: "rgba(255, 255, 255, 0.08)",
+                    borderRadius: "10px",
+                    color: "var(--text-primary)",
                   }}
                 >
-                  <Code size={24} />
+                  <Code size={20} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: "1.1rem", marginBottom: "0.2rem" }}>
-                    GitHub
-                  </h4>
-                  <span
-                    style={{
-                      color: "var(--text-secondary)",
-                      fontSize: "0.95rem",
-                    }}
-                  >
-                    github.com/its-tanay003
+                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>GitHub</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
+                    its-tanay003
                   </span>
                 </div>
               </motion.a>
 
-              <motion.div
-                whileHover={{ x: 10 }}
+              {/* Location & Relocation */}
+              <div
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "1.5rem",
-                  color: "var(--text-primary)",
+                  gap: "1rem",
+                  padding: "0.85rem",
+                  background: "rgba(245, 158, 11, 0.05)",
+                  border: "1px solid rgba(245, 158, 11, 0.2)",
+                  borderRadius: "12px",
                 }}
               >
                 <div
                   style={{
-                    padding: "1rem",
-                    background: "rgba(14, 165, 233, 0.1)",
-                    borderRadius: "12px",
-                    color: "var(--accent-primary)",
-                    border: "1px solid rgba(14, 165, 233, 0.2)",
+                    padding: "0.65rem",
+                    background: "rgba(245, 158, 11, 0.15)",
+                    borderRadius: "10px",
+                    color: "#f59e0b",
                   }}
                 >
-                  <MapPin size={24} />
+                  <MapPin size={20} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: "1.1rem", marginBottom: "0.2rem" }}>
-                    Location
-                  </h4>
-                  <span
-                    style={{
-                      color: "var(--text-secondary)",
-                      fontSize: "0.95rem",
-                    }}
-                  >
-                    Gurugram, Haryana / India
-                    <br />
-                    (Open to Remote/Relocation)
+                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Location & Mobility</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
+                    Gurugram, India • Relocation: Global
                   </span>
                 </div>
-              </motion.div>
+              </div>
+
+              {/* Website */}
+              <motion.a
+                href="https://tanaytanishk.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 6 }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  textDecoration: "none",
+                  color: "var(--text-primary)",
+                  padding: "0.85rem",
+                  background: "rgba(6, 182, 212, 0.05)",
+                  border: "1px solid rgba(6, 182, 212, 0.2)",
+                  borderRadius: "12px",
+                }}
+              >
+                <div
+                  style={{
+                    padding: "0.65rem",
+                    background: "rgba(6, 182, 212, 0.15)",
+                    borderRadius: "10px",
+                    color: "#06b6d4",
+                  }}
+                >
+                  <Globe size={20} />
+                </div>
+                <div>
+                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Web</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
+                    tanaytanishk.dev
+                  </span>
+                </div>
+              </motion.a>
             </div>
           </motion.div>
 
@@ -218,19 +270,23 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Tilt
-              tiltMaxAngleX={5}
-              tiltMaxAngleY={5}
+              tiltMaxAngleX={4}
+              tiltMaxAngleY={4}
               glareEnable={true}
               glareMaxOpacity={0.1}
               glarePosition="all"
               transitionSpeed={1500}
             >
               <div className="glass-card">
+                <h3 style={{ fontSize: "1.3rem", marginBottom: "1.5rem", color: "var(--text-primary)" }}>
+                  Send a Direct Message
+                </h3>
                 <form
+                  onSubmit={(e) => e.preventDefault()}
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "1.5rem",
+                    gap: "1.2rem",
                   }}
                 >
                   <div>
@@ -238,9 +294,9 @@ const Contact = () => {
                       htmlFor="name"
                       style={{
                         display: "block",
-                        marginBottom: "0.5rem",
+                        marginBottom: "0.4rem",
                         color: "var(--text-secondary)",
-                        fontSize: "0.9rem",
+                        fontSize: "0.85rem",
                         fontWeight: "500",
                       }}
                     >
@@ -251,22 +307,15 @@ const Contact = () => {
                       id="name"
                       style={{
                         width: "100%",
-                        padding: "0.875rem 1rem",
+                        padding: "0.8rem 1rem",
                         background: "rgba(0,0,0,0.3)",
                         border: "1px solid var(--border-color)",
                         borderRadius: "8px",
                         color: "var(--text-primary)",
                         outline: "none",
-                        transition: "border-color 0.3s",
-                        fontSize: "1rem",
+                        fontSize: "0.95rem",
                       }}
-                      placeholder="John Doe"
-                      onFocus={(e) =>
-                        (e.target.style.borderColor = "var(--accent-primary)")
-                      }
-                      onBlur={(e) =>
-                        (e.target.style.borderColor = "var(--border-color)")
-                      }
+                      placeholder="Your Name"
                     />
                   </div>
 
@@ -275,9 +324,9 @@ const Contact = () => {
                       htmlFor="email"
                       style={{
                         display: "block",
-                        marginBottom: "0.5rem",
+                        marginBottom: "0.4rem",
                         color: "var(--text-secondary)",
-                        fontSize: "0.9rem",
+                        fontSize: "0.85rem",
                         fontWeight: "500",
                       }}
                     >
@@ -288,22 +337,15 @@ const Contact = () => {
                       id="email"
                       style={{
                         width: "100%",
-                        padding: "0.875rem 1rem",
+                        padding: "0.8rem 1rem",
                         background: "rgba(0,0,0,0.3)",
                         border: "1px solid var(--border-color)",
                         borderRadius: "8px",
                         color: "var(--text-primary)",
                         outline: "none",
-                        transition: "border-color 0.3s",
-                        fontSize: "1rem",
+                        fontSize: "0.95rem",
                       }}
-                      placeholder="john@example.com"
-                      onFocus={(e) =>
-                        (e.target.style.borderColor = "var(--accent-primary)")
-                      }
-                      onBlur={(e) =>
-                        (e.target.style.borderColor = "var(--border-color)")
-                      }
+                      placeholder="your.email@example.com"
                     />
                   </div>
 
@@ -312,9 +354,9 @@ const Contact = () => {
                       htmlFor="message"
                       style={{
                         display: "block",
-                        marginBottom: "0.5rem",
+                        marginBottom: "0.4rem",
                         color: "var(--text-secondary)",
-                        fontSize: "0.9rem",
+                        fontSize: "0.85rem",
                         fontWeight: "500",
                       }}
                     >
@@ -325,35 +367,28 @@ const Contact = () => {
                       rows="4"
                       style={{
                         width: "100%",
-                        padding: "0.875rem 1rem",
+                        padding: "0.8rem 1rem",
                         background: "rgba(0,0,0,0.3)",
                         border: "1px solid var(--border-color)",
                         borderRadius: "8px",
                         color: "var(--text-primary)",
                         outline: "none",
                         resize: "vertical",
-                        transition: "border-color 0.3s",
-                        fontSize: "1rem",
+                        fontSize: "0.95rem",
                       }}
-                      placeholder="Your message here..."
-                      onFocus={(e) =>
-                        (e.target.style.borderColor = "var(--accent-primary)")
-                      }
-                      onBlur={(e) =>
-                        (e.target.style.borderColor = "var(--border-color)")
-                      }
-                    ></textarea>
+                      placeholder="Share an internship opportunity, project collaboration, or security inquiry..."
+                    />
                   </div>
 
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    type="button"
+                    type="submit"
                     className="btn btn-primary"
                     style={{
                       width: "100%",
                       marginTop: "0.5rem",
-                      padding: "1rem",
+                      padding: "0.9rem",
                     }}
                   >
                     Send Message <Send size={18} />

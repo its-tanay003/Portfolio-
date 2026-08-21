@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Shield, ChevronDown } from 'lucide-react';
 import { Canvas, useFrame } from '@react-three/fiber';
@@ -68,16 +68,16 @@ const Hero = () => {
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', background: 'rgba(14, 165, 233, 0.1)', border: '1px solid var(--glass-border)', borderRadius: '20px', color: 'var(--accent-primary)', marginBottom: '1.5rem', fontWeight: '600', fontSize: '0.9rem', backdropFilter: 'blur(10px)' }}
             >
               <Shield size={16} />
-              <span>Full Stack Developer & Problem Solver</span>
+              <span>AI-Enhanced Ethical Hacker & Security Engineer</span>
             </motion.div>
             
-            <h1 style={{ marginBottom: '1rem', lineHeight: '1.1', fontSize: '3.5rem' }}>
-              Computer Science <br />
-              <span style={{ color: 'var(--text-primary)', WebkitTextFillColor: 'var(--text-primary)' }}>Engineering Student</span>
+            <h1 style={{ marginBottom: '1rem', lineHeight: '1.1', fontSize: '3.2rem' }}>
+              Tanay Tanishk <br />
+              <span style={{ color: 'var(--accent-primary)', WebkitTextFillColor: 'var(--accent-primary)' }}>Cybersecurity & AI Defense</span>
             </h1>
             
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', marginBottom: '2.5rem', maxWidth: '550px', lineHeight: '1.8' }}>
-              I'm <strong style={{ color: 'var(--text-primary)' }}>Tanay Tanishk</strong>. A Computer Science Engineering student passionate about building scalable web applications and intuitive user experiences through continuous learning and innovative problem-solving.
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '2.5rem', maxWidth: '580px', lineHeight: '1.8' }}>
+              Computer Engineering undergraduate specializing in <strong style={{ color: 'var(--text-primary)' }}>Cybersecurity at LPU (Top 1% cohort)</strong>. Experienced in adversarial ML security, red teaming, automated recon pipelines, and patent-pending IoT health systems. Sharpened through corporate simulations at JPMorgan Chase, Mastercard, and Deloitte Australia.
             </p>
             
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -87,11 +87,20 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                View My Work
+                Explore Projects
+              </motion.a>
+              <motion.a 
+                href="#experience" 
+                className="btn btn-outline"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Experience & Skills
               </motion.a>
               <motion.a 
                 href="#contact" 
                 className="btn btn-outline"
+                style={{ borderColor: 'var(--accent-secondary)', color: 'var(--accent-secondary)' }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -104,10 +113,10 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 2.4, type: "spring" }}
-            style={{ position: 'relative', height: '500px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+            style={{ position: 'relative', height: '480px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
           >
             {/* Ambient Background Glow for 3D object */}
-            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, transparent 70%)', filter: 'blur(40px)', zIndex: 0 }} />
+            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '320px', height: '320px', background: 'radial-gradient(circle, rgba(14, 165, 233, 0.25) 0%, transparent 70%)', filter: 'blur(40px)', zIndex: 0 }} />
             
             <div style={{ width: '100%', height: '100%', position: 'relative', zIndex: 1 }}>
               <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
@@ -122,27 +131,41 @@ const Hero = () => {
               </Canvas>
             </div>
             
-          {/* Photo Placeholder */}
-          <motion.img
-            src="/photo.jpg"
-            alt="Tanay Tanishk"
-            style={{
+            {/* Profile Picture Overlay Badge */}
+            <motion.div
+              style={{
                 position: 'absolute',
-                top: '-90%',
-                right: '-75%',
-                width: '200px',
-                height: '200px',
-                objectFit: 'cover',
-                borderRadius: '50%',
-                transform: 'none',
-                zIndex: 2,
-              border: '4px solid var(--accent-primary)',
-              boxShadow: '0 0 20px var(--accent-glow)'
-            }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          />
-          {/* End Photo Placeholder */}
+                bottom: '15px',
+                right: '15px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '0.5rem 1rem 0.5rem 0.5rem',
+                background: 'rgba(6, 9, 19, 0.85)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid var(--glass-border)',
+                borderRadius: '50px',
+                zIndex: 3,
+                boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+              }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <img
+                src="/photo.jpg"
+                alt="Tanay Tanishk"
+                style={{
+                  width: '54px',
+                  height: '54px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  border: '2px solid var(--accent-primary)'
+                }}
+              />
+              <div>
+                <div style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--text-primary)' }}>Tanay Tanishk</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--accent-secondary)' }}>● Open for Summer '27</div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

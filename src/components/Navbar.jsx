@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Menu, X, Shield } from 'lucide-react';
 
 const Navbar = () => {
@@ -11,13 +11,15 @@ const Navbar = () => {
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Certifications', href: '#certifications' },
+    { name: 'Leadership', href: '#extracurricular' },
     { name: 'Contact', href: '#contact' }
   ];
 
   return (
     <nav>
       <div className="container nav-content">
-        <a href="#" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <a href="#home" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Shield size={24} color="var(--accent-primary)" />
           Tanay<span>Tanishk</span>
         </a>
@@ -30,7 +32,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <button className="mobile-menu-btn" onClick={toggleMenu}>
+        <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle Navigation">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>

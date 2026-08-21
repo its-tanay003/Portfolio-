@@ -1,53 +1,92 @@
-import React from "react";
-import { Code, Terminal, Shield, Cpu, Lock, Network } from "lucide-react";
+import { Code, Shield, Terminal, Cloud, Brain, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Cybersecurity Toolkit",
-      icon: <Shield size={28} />,
-      color: "var(--accent-primary)",
-      bg: "rgba(14, 165, 233, 0.1)",
+      title: "Programming Languages",
+      icon: <Code size={26} />,
+      color: "#38bdf8",
+      bg: "rgba(56, 189, 248, 0.1)",
+      skills: [
+        "Python",
+        "SQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "C/C++",
+        "Rust",
+        "Bash Scripting",
+      ],
+    },
+    {
+      title: "Cyber Tooling & OS",
+      icon: <Terminal size={26} />,
+      color: "#ef4444",
+      bg: "rgba(239, 68, 68, 0.1)",
       skills: [
         "Kali Linux",
-        "Network Security Protocols",
-        "Ethical Hacking Methodologies",
-        "Vulnerability Assessment",
-        "Penetration Testing",
+        "Nuclei",
+        "Subfinder",
+        "Burp Suite Pro",
+        "Metasploit",
+        "Nmap",
+        "Wireshark",
       ],
     },
     {
-      title: "Core Languages & Web Tech",
-      icon: <Code size={28} />,
-      color: "#8b5cf6",
-      bg: "rgba(139, 92, 246, 0.1)",
-      skills: ["Python", "SQL", "HTML", "CSS", "JavaScript"],
+      title: "AI & LLM Security",
+      icon: <Brain size={26} />,
+      color: "#a855f7",
+      bg: "rgba(168, 85, 247, 0.1)",
+      skills: [
+        "Adversarial ML",
+        "Prompt Injection",
+        "Garak Framework",
+        "OWASP LLM Top 10",
+        "LLM Red Teaming",
+        "Data Exfiltration Defense",
+      ],
     },
     {
-      title: "System Architecture",
-      icon: <Network size={28} />,
-      color: "var(--accent-secondary)",
+      title: "Offensive Security",
+      icon: <Lock size={26} />,
+      color: "#10b981",
       bg: "rgba(16, 185, 129, 0.1)",
       skills: [
-        "IoT Architecture",
-        "Hardware-Software Data Fusion",
-        "Real-Time Data Processing",
-        "Systems Integration",
+        "Red Teaming",
+        "Web Pen Testing",
+        "Network Security",
+        "Active Directory",
+        "Recon Pipelines",
+        "Vulnerability Scanning",
       ],
     },
     {
-      title: "Problem Solving",
-      icon: <Cpu size={28} />,
+      title: "Cloud & DevSecOps",
+      icon: <Cloud size={26} />,
       color: "#f59e0b",
       bg: "rgba(245, 158, 11, 0.1)",
       skills: [
-        "Data Structures & Algorithms",
-        "Analytical Thinking",
-        "Strategic Execution",
-        "High-Pressure Team Management",
-        "Adaptability",
+        "AWS IAM",
+        "GCP",
+        "Kubernetes",
+        "CI/CD Security",
+        "Cloud Architecture",
+      ],
+    },
+    {
+      title: "Core Attributes & Mindset",
+      icon: <Shield size={26} />,
+      color: "#06b6d4",
+      bg: "rgba(6, 182, 212, 0.1)",
+      skills: [
+        "Zero-Trust Architecture",
+        "Strategic & Analytical Thinking",
+        "High-Pressure Execution",
+        "Teamwork & Team Building",
+        "Consistent & Practical Learner",
       ],
     },
   ];
@@ -57,7 +96,7 @@ const Skills = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -80,11 +119,11 @@ const Skills = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          Technical Arsenal
+          Technical Skills & Tooling
         </motion.h2>
 
         <motion.div
-          className="grid grid-2"
+          className="grid grid-3"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -106,36 +145,43 @@ const Skills = () => {
                   className="glass-card"
                   style={{
                     height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
                     borderTop: `2px solid ${category.color}`,
+                    padding: "2rem",
                   }}
                 >
                   <div
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: "1rem",
-                      marginBottom: "2rem",
+                      gap: "0.85rem",
+                      marginBottom: "1.5rem",
                     }}
                   >
                     <div
                       style={{
                         color: category.color,
-                        padding: "0.75rem",
+                        padding: "0.6rem",
                         background: category.bg,
-                        borderRadius: "12px",
-                        boxShadow: `0 0 20px ${category.bg}`,
+                        borderRadius: "10px",
+                        boxShadow: `0 0 15px ${category.bg}`,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                       }}
                     >
                       {category.icon}
                     </div>
-                    <h3 style={{ fontSize: "1.3rem" }}>{category.title}</h3>
+                    <h3 style={{ fontSize: "1.15rem", color: "var(--text-primary)" }}>{category.title}</h3>
                   </div>
 
                   <div
                     style={{
                       display: "flex",
                       flexWrap: "wrap",
-                      gap: "0.75rem",
+                      gap: "0.5rem",
+                      marginTop: "auto",
                     }}
                   >
                     {category.skills.map((skill, sIndex) => (
@@ -153,11 +199,11 @@ const Skills = () => {
                           damping: 10,
                         }}
                         style={{
-                          padding: "0.5rem 1rem",
+                          padding: "0.35rem 0.75rem",
                           background: "var(--bg-secondary)",
                           border: "1px solid var(--border-color)",
                           borderRadius: "8px",
-                          fontSize: "0.9rem",
+                          fontSize: "0.85rem",
                           color: "var(--text-secondary)",
                           cursor: "default",
                         }}

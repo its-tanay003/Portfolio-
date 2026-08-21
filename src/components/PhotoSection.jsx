@@ -1,5 +1,4 @@
-import React from 'react';
-import profileImg from '../assets/photo.jpg'; // Replace with your actual photo
+import profileImg from '../assets/photo.jpg';
 
 const PhotoSection = () => (
   <div style={{

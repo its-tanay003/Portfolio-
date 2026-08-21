@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import CyberTerminal from './components/CyberTerminal';
 import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
@@ -12,13 +13,14 @@ import Contact from './components/Contact';
 import ParticlesBackground from './components/ParticlesBackground';
 import CustomCursor from './components/CustomCursor';
 import Preloader from './components/Preloader';
+import { Shield, Lock, Terminal } from 'lucide-react';
 
 function App() {
   useEffect(() => {
     // Initialize Lenis for smooth scrolling
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
@@ -46,8 +48,24 @@ function App() {
       <CustomCursor />
       <ParticlesBackground />
       <Navbar />
+      
+      {/* Cybersecurity Telemetry Ticker */}
+      <div className="telemetry-bar" style={{ marginTop: '64px' }}>
+        <div style={{ display: 'flex', gap: '3rem', animation: 'none', padding: '0 2rem', alignItems: 'center', width: '100%', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: 'var(--accent-green)' }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--accent-green)', boxShadow: '0 0 6px var(--accent-green)' }} />
+            DEFENSE_STATUS: ACTIVE
+          </span>
+          <span style={{ color: 'var(--accent-cyan)' }}>NODE: LPU_AI_THREAT_LAB [TOP 1%]</span>
+          <span style={{ color: 'var(--accent-purple)' }}>AI_DEFENSE: GARAK_OWASP_LLM_ENGAGED</span>
+          <span style={{ color: 'var(--accent-amber)' }}>RECON: CONTINUOUS_NUCLEI_MONITORING</span>
+          <span style={{ color: 'var(--text-primary)' }}>TARGET: SUMMER_2027_INTERN</span>
+        </div>
+      </div>
+
       <main>
         <Hero />
+        <CyberTerminal />
         <About />
         <Skills />
         <Experience />
@@ -57,13 +75,18 @@ function App() {
         <Contact />
       </main>
       
-      <footer style={{ background: 'rgba(2, 4, 10, 0.9)', padding: '2rem 0', textAlign: 'center', borderTop: '1px solid var(--border-color)', position: 'relative', zIndex: 10 }}>
+      <footer style={{ background: 'rgba(3, 7, 18, 0.95)', padding: '2.5rem 0', textAlign: 'center', borderTop: '1px solid var(--border-color)', position: 'relative', zIndex: 10 }}>
         <div className="container">
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-            © {new Date().getFullYear()} Tanay Tanishk. All rights reserved.
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+            <span className="cyber-tag"><Shield size={12} /> ZERO_TRUST_MINDSET</span>
+            <span className="cyber-tag green"><Lock size={12} /> ENCRYPTED_ENDPOINT</span>
+            <span className="cyber-tag purple"><Terminal size={12} /> SEC_OPS_CONSOLE</span>
+          </div>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontFamily: 'var(--font-mono)' }}>
+            © {new Date().getFullYear()} Tanay Tanishk // AI-Enhanced Ethical Hacker & Security Engineer.
           </p>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '0.5rem', opacity: 0.7 }}>
-            Built with React, R3F, Framer Motion, and Lenis.
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.4rem', fontFamily: 'var(--font-mono)' }}>
+            LPU • B.Tech CSE (Cybersecurity) • Research Assistant in AI Threat Lab
           </p>
         </div>
       </footer>

@@ -1,52 +1,59 @@
-import { Award, CheckCircle2 } from "lucide-react";
+import { Award, CheckCircle2, Key } from "lucide-react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
 const Certifications = () => {
   const certifications = [
     {
+      id: "CERT // INFOSYS_01",
       name: "Fundamentals of Info Sec",
       issuer: "Infosys",
       type: "Information Security Foundation",
-      glow: "rgba(14, 165, 233, 0.3)",
-      color: "var(--accent-primary)",
+      glow: "rgba(0, 240, 255, 0.3)",
+      color: "var(--accent-cyan)",
     },
     {
+      id: "CERT // INFOSYS_02",
       name: "Intro to Cyber Security & Python",
       issuer: "Infosys",
       type: "Cybersecurity & Automation",
       glow: "rgba(16, 185, 129, 0.3)",
-      color: "var(--accent-secondary)",
+      color: "var(--accent-green)",
     },
     {
+      id: "SIM // DELOITTE_AU",
       name: "Global Cyber Security Simulation",
       issuer: "Deloitte Australia",
       type: "Practical Corporate Simulation",
-      glow: "rgba(139, 92, 246, 0.3)",
-      color: "#8b5cf6",
+      glow: "rgba(168, 85, 247, 0.3)",
+      color: "#a855f7",
     },
     {
+      id: "SIM // MASTERCARD",
       name: "Cybersecurity Job Simulation",
       issuer: "Mastercard",
       type: "Threat Intelligence & Auth",
-      glow: "rgba(239, 68, 68, 0.3)",
-      color: "#ef4444",
+      glow: "rgba(244, 63, 94, 0.3)",
+      color: "#f43f5e",
     },
     {
+      id: "SIM // JPMORGAN",
       name: "Software Engineering Simulation",
       issuer: "JPMorgan Chase",
-      type: "System & Financial Data Feeds",
-      glow: "rgba(59, 130, 246, 0.3)",
-      color: "#3b82f6",
+      type: "Financial Data Feeds & SWE",
+      glow: "rgba(56, 189, 248, 0.3)",
+      color: "#38bdf8",
     },
     {
+      id: "COMP // QUIZOFF_26",
       name: "QuizOff 2026",
       issuer: "Google Gemini / Unstop",
       type: "AI & Competitive Assessment",
-      glow: "rgba(245, 158, 11, 0.3)",
-      color: "#f59e0b",
+      glow: "rgba(251, 191, 36, 0.3)",
+      color: "#fbbf24",
     },
     {
+      id: "CODE // NEOCOLAB",
       name: "Computer Programming",
       issuer: "Neo Colab",
       type: "Algorithms & Problem Solving",
@@ -62,6 +69,9 @@ const Certifications = () => {
       style={{ position: "relative" }}
     >
       <div className="container">
+        <div className="section-subtitle">
+          <Key size={14} /> CREDENTIALS // CRYPTOGRAPHIC_VERIFIED
+        </div>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -97,10 +107,10 @@ const Certifications = () => {
                 style={{ height: "100%" }}
               >
                 <div
-                  className="glass-card"
+                  className="cyber-card"
                   style={{
                     height: "100%",
-                    padding: "2rem 1.5rem",
+                    padding: "1.75rem 1.4rem",
                     display: "flex",
                     flexDirection: "column",
                     position: "relative",
@@ -108,19 +118,14 @@ const Certifications = () => {
                     borderTop: `2px solid ${cert.color}`,
                   }}
                 >
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "20%",
-                      right: "-20px",
-                      width: "80px",
-                      height: "80px",
-                      background: cert.glow,
-                      filter: "blur(40px)",
-                      opacity: 0.3,
-                      zIndex: 0,
-                    }}
-                  />
+                  <div className="terminal-header">
+                    <div className="terminal-dots">
+                      <span className="terminal-dot dot-red" />
+                      <span className="terminal-dot dot-yellow" />
+                      <span className="terminal-dot dot-green" />
+                    </div>
+                    <span style={{ color: cert.color, fontSize: '0.72rem' }}>{cert.id}</span>
+                  </div>
 
                   <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
                     <div
@@ -128,29 +133,30 @@ const Certifications = () => {
                         display: "inline-flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        width: "48px",
-                        height: "48px",
-                        background: "rgba(255,255,255,0.05)",
+                        width: "44px",
+                        height: "44px",
+                        background: "rgba(255,255,255,0.04)",
                         color: cert.color,
-                        borderRadius: "12px",
-                        marginBottom: "1.2rem",
-                        border: "1px solid var(--border-color)",
-                        boxShadow: `0 0 15px ${cert.glow}`,
+                        borderRadius: "8px",
+                        marginBottom: "1rem",
+                        border: "1px solid rgba(255, 255, 255, 0.08)",
+                        boxShadow: `0 0 12px ${cert.glow}`,
                       }}
                     >
-                      <Award size={26} />
+                      <Award size={22} />
                     </div>
 
-                    <h3 style={{ fontSize: "1.15rem", marginBottom: "0.4rem", color: "var(--text-primary)" }}>
+                    <h3 style={{ fontSize: "1.1rem", marginBottom: "0.3rem", color: "var(--text-primary)" }}>
                       {cert.name}
                     </h3>
                     
                     <p
                       style={{
                         color: cert.color,
-                        fontSize: "0.95rem",
+                        fontSize: "0.9rem",
                         fontWeight: "600",
-                        marginBottom: "0.4rem",
+                        fontFamily: "var(--font-mono)",
+                        marginBottom: "0.3rem",
                       }}
                     >
                       {cert.issuer}
@@ -159,7 +165,7 @@ const Certifications = () => {
                     <p
                       style={{
                         color: "var(--text-secondary)",
-                        fontSize: "0.85rem",
+                        fontSize: "0.82rem",
                         marginBottom: "1.2rem",
                         flex: 1,
                       }}
@@ -173,18 +179,18 @@ const Certifications = () => {
                         alignItems: "center",
                         gap: "0.4rem",
                         color: "var(--text-primary)",
-                        fontSize: "0.8rem",
-                        fontWeight: "500",
-                        padding: "0.35rem 0.75rem",
-                        background: "rgba(255,255,255,0.03)",
-                        borderRadius: "20px",
-                        border: "1px solid var(--border-color)",
+                        fontSize: "0.75rem",
+                        fontFamily: "var(--font-mono)",
+                        padding: "0.3rem 0.65rem",
+                        background: "rgba(3, 7, 18, 0.8)",
+                        borderRadius: "4px",
+                        border: "1px solid rgba(255, 255, 255, 0.08)",
                         width: "fit-content",
                         marginTop: "auto",
                       }}
                     >
-                      <CheckCircle2 size={14} color={cert.color} />
-                      <span>Verified Credential</span>
+                      <CheckCircle2 size={13} color={cert.color} />
+                      <span>AUTHENTICATED</span>
                     </div>
                   </div>
                 </div>

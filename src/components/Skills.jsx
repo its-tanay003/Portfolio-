@@ -1,30 +1,31 @@
-import { Code, Shield, Terminal, Cloud, Brain, Lock } from "lucide-react";
+import { Code, Shield, Terminal, Cloud, Brain, Lock, Layers } from "lucide-react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Programming Languages",
-      icon: <Code size={26} />,
-      color: "#38bdf8",
-      bg: "rgba(56, 189, 248, 0.1)",
+      title: "Programming Stacks",
+      id: "LANG_CORE",
+      icon: <Code size={22} />,
+      color: "#00f0ff",
+      bg: "rgba(0, 240, 255, 0.1)",
       skills: [
         "Python",
         "SQL",
-        "HTML",
-        "CSS",
+        "HTML5 / CSS3",
         "JavaScript",
-        "C/C++",
+        "C / C++",
         "Rust",
         "Bash Scripting",
       ],
     },
     {
       title: "Cyber Tooling & OS",
-      icon: <Terminal size={26} />,
-      color: "#ef4444",
-      bg: "rgba(239, 68, 68, 0.1)",
+      id: "OFFENSIVE_TOOLS",
+      icon: <Terminal size={22} />,
+      color: "#f43f5e",
+      bg: "rgba(244, 63, 94, 0.1)",
       skills: [
         "Kali Linux",
         "Nuclei",
@@ -37,7 +38,8 @@ const Skills = () => {
     },
     {
       title: "AI & LLM Security",
-      icon: <Brain size={26} />,
+      id: "ADVERSARIAL_AI",
+      icon: <Brain size={22} />,
       color: "#a855f7",
       bg: "rgba(168, 85, 247, 0.1)",
       skills: [
@@ -46,12 +48,13 @@ const Skills = () => {
         "Garak Framework",
         "OWASP LLM Top 10",
         "LLM Red Teaming",
-        "Data Exfiltration Defense",
+        "Data Exfiltration Def",
       ],
     },
     {
       title: "Offensive Security",
-      icon: <Lock size={26} />,
+      id: "RED_TEAMING",
+      icon: <Lock size={22} />,
       color: "#10b981",
       bg: "rgba(16, 185, 129, 0.1)",
       skills: [
@@ -60,33 +63,35 @@ const Skills = () => {
         "Network Security",
         "Active Directory",
         "Recon Pipelines",
-        "Vulnerability Scanning",
+        "Vulnerability Scans",
       ],
     },
     {
       title: "Cloud & DevSecOps",
-      icon: <Cloud size={26} />,
-      color: "#f59e0b",
-      bg: "rgba(245, 158, 11, 0.1)",
+      id: "INFRA_SEC",
+      icon: <Cloud size={22} />,
+      color: "#fbbf24",
+      bg: "rgba(251, 191, 36, 0.1)",
       skills: [
         "AWS IAM",
-        "GCP",
+        "GCP Security",
         "Kubernetes",
         "CI/CD Security",
         "Cloud Architecture",
       ],
     },
     {
-      title: "Core Attributes & Mindset",
-      icon: <Shield size={26} />,
-      color: "#06b6d4",
-      bg: "rgba(6, 182, 212, 0.1)",
+      title: "Core Mindset & Strategy",
+      id: "SEC_ARCH",
+      icon: <Shield size={22} />,
+      color: "#38bdf8",
+      bg: "rgba(56, 189, 248, 0.1)",
       skills: [
         "Zero-Trust Architecture",
-        "Strategic & Analytical Thinking",
+        "Strategic Problem Solving",
         "High-Pressure Execution",
-        "Teamwork & Team Building",
-        "Consistent & Practical Learner",
+        "Cross-Functional Leadership",
+        "Continuous Learning",
       ],
     },
   ];
@@ -96,7 +101,7 @@ const Skills = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.08,
       },
     },
   };
@@ -113,13 +118,16 @@ const Skills = () => {
   return (
     <section id="skills" className="section" style={{ position: "relative" }}>
       <div className="container">
+        <div className="section-subtitle">
+          <Layers size={14} /> TECH_STACK // ARSENAL_MATRIX
+        </div>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          Technical Skills & Tooling
+          Technical Arsenal & Tooling
         </motion.h2>
 
         <motion.div
@@ -132,40 +140,50 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Tilt
-                tiltMaxAngleX={5}
-                tiltMaxAngleY={5}
+                tiltMaxAngleX={6}
+                tiltMaxAngleY={6}
                 glareEnable={true}
-                glareMaxOpacity={0.1}
+                glareMaxOpacity={0.12}
                 glarePosition="all"
                 scale={1.02}
                 transitionSpeed={1000}
                 style={{ height: "100%" }}
               >
                 <div
-                  className="glass-card"
+                  className="cyber-card"
                   style={{
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
                     borderTop: `2px solid ${category.color}`,
-                    padding: "2rem",
+                    padding: "1.75rem",
                   }}
                 >
+                  <div className="terminal-header">
+                    <div className="terminal-dots">
+                      <span className="terminal-dot dot-red" />
+                      <span className="terminal-dot dot-yellow" />
+                      <span className="terminal-dot dot-green" />
+                    </div>
+                    <span style={{ color: category.color }}>{category.id}</span>
+                  </div>
+
                   <div
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: "0.85rem",
-                      marginBottom: "1.5rem",
+                      gap: "0.75rem",
+                      marginBottom: "1.2rem",
                     }}
                   >
                     <div
                       style={{
                         color: category.color,
-                        padding: "0.6rem",
+                        padding: "0.55rem",
                         background: category.bg,
-                        borderRadius: "10px",
-                        boxShadow: `0 0 15px ${category.bg}`,
+                        borderRadius: "8px",
+                        border: `1px solid ${category.color}30`,
+                        boxShadow: `0 0 12px ${category.bg}`,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -173,14 +191,16 @@ const Skills = () => {
                     >
                       {category.icon}
                     </div>
-                    <h3 style={{ fontSize: "1.15rem", color: "var(--text-primary)" }}>{category.title}</h3>
+                    <h3 style={{ fontSize: "1.1rem", color: "var(--text-primary)" }}>
+                      {category.title}
+                    </h3>
                   </div>
 
                   <div
                     style={{
                       display: "flex",
                       flexWrap: "wrap",
-                      gap: "0.5rem",
+                      gap: "0.45rem",
                       marginTop: "auto",
                     }}
                   >
@@ -193,22 +213,18 @@ const Skills = () => {
                           borderColor: category.color,
                           color: "#fff",
                         }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 400,
-                          damping: 10,
-                        }}
                         style={{
-                          padding: "0.35rem 0.75rem",
-                          background: "var(--bg-secondary)",
-                          border: "1px solid var(--border-color)",
-                          borderRadius: "8px",
-                          fontSize: "0.85rem",
+                          padding: "0.3rem 0.65rem",
+                          background: "rgba(3, 7, 18, 0.7)",
+                          border: "1px solid rgba(255, 255, 255, 0.08)",
+                          borderRadius: "4px",
+                          fontFamily: "var(--font-mono)",
+                          fontSize: "0.8rem",
                           color: "var(--text-secondary)",
                           cursor: "default",
                         }}
                       >
-                        {skill}
+                        $ {skill}
                       </motion.span>
                     ))}
                   </div>

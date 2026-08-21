@@ -1,4 +1,4 @@
-import { Mail, Code, User, Send, MapPin, Phone, Globe } from "lucide-react";
+import { Mail, Code, User, Send, MapPin, Phone, Globe, Lock, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
@@ -6,84 +6,90 @@ const Contact = () => {
   return (
     <section id="contact" className="section" style={{ position: "relative" }}>
       <div className="container">
+        <div className="section-subtitle">
+          <Lock size={14} /> SECURE_COMMS // TRANSMISSION_PORTAL
+        </div>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          Get In Touch
+          Initialize Transmission
         </motion.h2>
 
         <div
           className="grid grid-2"
-          style={{ gap: "4rem", alignItems: "flex-start" }}
+          style={{ gap: "3.5rem", alignItems: "flex-start" }}
         >
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
+            <div className="cyber-tag" style={{ marginBottom: '1rem' }}>
+              <ShieldCheck size={14} /> ENCRYPTED_ENDPOINT // DIRECT_DISPATCH
+            </div>
+
             <h3
               style={{
-                fontSize: "2rem",
+                fontSize: "1.9rem",
                 marginBottom: "1rem",
-                background:
-                  "linear-gradient(to right, var(--text-primary), var(--accent-primary))",
+                background: "linear-gradient(to right, var(--text-primary), var(--accent-cyan))",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Let's Build & Secure Together.
+              Let's Build & Secure Enterprise Systems.
             </h3>
             <p
               style={{
                 color: "var(--text-secondary)",
-                marginBottom: "2.5rem",
-                fontSize: "1.05rem",
+                marginBottom: "2rem",
+                fontSize: "1.02rem",
                 lineHeight: "1.8",
               }}
             >
-              Whether you are looking for a cybersecurity intern for Summer 2027, want to collaborate on adversarial ML defense, discuss bug bounties, or explore patent-pending IoT health systems, I’d love to connect.
+              Whether you are looking for a cybersecurity & SWE intern for Summer 2027, want to collaborate on adversarial ML defense, explore Bug Bounty recon pipelines, or discuss patent-pending IoT health architectures, dispatch a secure transmission below.
             </p>
 
             <div
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-                gap: "1.2rem",
+                gap: "1rem",
               }}
             >
               {/* Email */}
               <motion.a
                 href="mailto:tkkrtanay00@gmail.com"
-                whileHover={{ x: 6 }}
+                whileHover={{ x: 5 }}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "1rem",
+                  gap: "0.85rem",
                   textDecoration: "none",
                   color: "var(--text-primary)",
-                  padding: "0.85rem",
-                  background: "rgba(14, 165, 233, 0.05)",
-                  border: "1px solid rgba(14, 165, 233, 0.2)",
-                  borderRadius: "12px",
+                  padding: "0.85rem 1rem",
+                  background: "rgba(0, 240, 255, 0.04)",
+                  border: "1px solid rgba(0, 240, 255, 0.2)",
+                  borderRadius: "8px",
                 }}
               >
                 <div
                   style={{
-                    padding: "0.65rem",
-                    background: "rgba(14, 165, 233, 0.15)",
-                    borderRadius: "10px",
-                    color: "var(--accent-primary)",
+                    padding: "0.55rem",
+                    background: "rgba(0, 240, 255, 0.12)",
+                    borderRadius: "6px",
+                    color: "var(--accent-cyan)",
                   }}
                 >
-                  <Mail size={20} />
+                  <Mail size={18} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Email</h4>
-                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
+                  <h4 style={{ fontSize: "0.78rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>EMAIL_ADDR</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.88rem", fontWeight: "600", fontFamily: "var(--font-mono)" }}>
                     tkkrtanay00@gmail.com
                   </span>
                 </div>
@@ -92,32 +98,32 @@ const Contact = () => {
               {/* Phone */}
               <motion.a
                 href="tel:+918368211098"
-                whileHover={{ x: 6 }}
+                whileHover={{ x: 5 }}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "1rem",
+                  gap: "0.85rem",
                   textDecoration: "none",
                   color: "var(--text-primary)",
-                  padding: "0.85rem",
-                  background: "rgba(16, 185, 129, 0.05)",
+                  padding: "0.85rem 1rem",
+                  background: "rgba(16, 185, 129, 0.04)",
                   border: "1px solid rgba(16, 185, 129, 0.2)",
-                  borderRadius: "12px",
+                  borderRadius: "8px",
                 }}
               >
                 <div
                   style={{
-                    padding: "0.65rem",
-                    background: "rgba(16, 185, 129, 0.15)",
-                    borderRadius: "10px",
-                    color: "var(--accent-secondary)",
+                    padding: "0.55rem",
+                    background: "rgba(16, 185, 129, 0.12)",
+                    borderRadius: "6px",
+                    color: "var(--accent-green)",
                   }}
                 >
-                  <Phone size={20} />
+                  <Phone size={18} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Phone</h4>
-                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
+                  <h4 style={{ fontSize: "0.78rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>VOICE_COMM</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.88rem", fontWeight: "600", fontFamily: "var(--font-mono)" }}>
                     +91 83682-11098
                   </span>
                 </div>
@@ -128,32 +134,32 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/tanay-tanishk"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ x: 6 }}
+                whileHover={{ x: 5 }}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "1rem",
+                  gap: "0.85rem",
                   textDecoration: "none",
                   color: "var(--text-primary)",
-                  padding: "0.85rem",
-                  background: "rgba(139, 92, 246, 0.05)",
-                  border: "1px solid rgba(139, 92, 246, 0.2)",
-                  borderRadius: "12px",
+                  padding: "0.85rem 1rem",
+                  background: "rgba(168, 85, 247, 0.04)",
+                  border: "1px solid rgba(168, 85, 247, 0.2)",
+                  borderRadius: "8px",
                 }}
               >
                 <div
                   style={{
-                    padding: "0.65rem",
-                    background: "rgba(139, 92, 246, 0.15)",
-                    borderRadius: "10px",
-                    color: "#8b5cf6",
+                    padding: "0.55rem",
+                    background: "rgba(168, 85, 247, 0.12)",
+                    borderRadius: "6px",
+                    color: "#a855f7",
                   }}
                 >
-                  <User size={20} />
+                  <User size={18} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>LinkedIn</h4>
-                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
+                  <h4 style={{ fontSize: "0.78rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>LINKEDIN_PROF</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.88rem", fontWeight: "600", fontFamily: "var(--font-mono)" }}>
                     in/tanay-tanishk
                   </span>
                 </div>
@@ -164,32 +170,32 @@ const Contact = () => {
                 href="https://github.com/its-tanay003"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ x: 6 }}
+                whileHover={{ x: 5 }}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "1rem",
+                  gap: "0.85rem",
                   textDecoration: "none",
                   color: "var(--text-primary)",
-                  padding: "0.85rem",
-                  background: "rgba(255, 255, 255, 0.03)",
-                  border: "1px solid var(--border-color)",
-                  borderRadius: "12px",
+                  padding: "0.85rem 1rem",
+                  background: "rgba(255, 255, 255, 0.02)",
+                  border: "1px solid var(--border-subtle)",
+                  borderRadius: "8px",
                 }}
               >
                 <div
                   style={{
-                    padding: "0.65rem",
+                    padding: "0.55rem",
                     background: "rgba(255, 255, 255, 0.08)",
-                    borderRadius: "10px",
+                    borderRadius: "6px",
                     color: "var(--text-primary)",
                   }}
                 >
-                  <Code size={20} />
+                  <Code size={18} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>GitHub</h4>
-                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
+                  <h4 style={{ fontSize: "0.78rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>GITHUB_REPOS</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.88rem", fontWeight: "600", fontFamily: "var(--font-mono)" }}>
                     its-tanay003
                   </span>
                 </div>
@@ -200,27 +206,27 @@ const Contact = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "1rem",
-                  padding: "0.85rem",
-                  background: "rgba(245, 158, 11, 0.05)",
-                  border: "1px solid rgba(245, 158, 11, 0.2)",
-                  borderRadius: "12px",
+                  gap: "0.85rem",
+                  padding: "0.85rem 1rem",
+                  background: "rgba(251, 191, 36, 0.04)",
+                  border: "1px solid rgba(251, 191, 36, 0.2)",
+                  borderRadius: "8px",
                 }}
               >
                 <div
                   style={{
-                    padding: "0.65rem",
-                    background: "rgba(245, 158, 11, 0.15)",
-                    borderRadius: "10px",
-                    color: "#f59e0b",
+                    padding: "0.55rem",
+                    background: "rgba(251, 191, 36, 0.12)",
+                    borderRadius: "6px",
+                    color: "#fbbf24",
                   }}
                 >
-                  <MapPin size={20} />
+                  <MapPin size={18} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Location & Mobility</h4>
-                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
-                    Gurugram, India • Relocation: Global
+                  <h4 style={{ fontSize: "0.78rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>GEOLOCATION</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.85rem", fontWeight: "600", fontFamily: "var(--font-mono)" }}>
+                    Gurugram, India (Global Reloc)
                   </span>
                 </div>
               </div>
@@ -230,32 +236,32 @@ const Contact = () => {
                 href="https://tanaytanishk.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ x: 6 }}
+                whileHover={{ x: 5 }}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "1rem",
+                  gap: "0.85rem",
                   textDecoration: "none",
                   color: "var(--text-primary)",
-                  padding: "0.85rem",
-                  background: "rgba(6, 182, 212, 0.05)",
-                  border: "1px solid rgba(6, 182, 212, 0.2)",
-                  borderRadius: "12px",
+                  padding: "0.85rem 1rem",
+                  background: "rgba(56, 189, 248, 0.04)",
+                  border: "1px solid rgba(56, 189, 248, 0.2)",
+                  borderRadius: "8px",
                 }}
               >
                 <div
                   style={{
-                    padding: "0.65rem",
-                    background: "rgba(6, 182, 212, 0.15)",
-                    borderRadius: "10px",
-                    color: "#06b6d4",
+                    padding: "0.55rem",
+                    background: "rgba(56, 189, 248, 0.12)",
+                    borderRadius: "6px",
+                    color: "#38bdf8",
                   }}
                 >
-                  <Globe size={20} />
+                  <Globe size={18} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Web</h4>
-                  <span style={{ color: "var(--text-primary)", fontSize: "0.92rem", fontWeight: "500" }}>
+                  <h4 style={{ fontSize: "0.78rem", color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>ONLINE_DOMAIN</h4>
+                  <span style={{ color: "var(--text-primary)", fontSize: "0.88rem", fontWeight: "600", fontFamily: "var(--font-mono)" }}>
                     tanaytanishk.dev
                   </span>
                 </div>
@@ -264,7 +270,7 @@ const Contact = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -277,10 +283,16 @@ const Contact = () => {
               glarePosition="all"
               transitionSpeed={1500}
             >
-              <div className="glass-card">
-                <h3 style={{ fontSize: "1.3rem", marginBottom: "1.5rem", color: "var(--text-primary)" }}>
-                  Send a Direct Message
-                </h3>
+              <div className="cyber-card" style={{ borderTop: "2px solid var(--accent-cyan)" }}>
+                <div className="terminal-header">
+                  <div className="terminal-dots">
+                    <span className="terminal-dot dot-red" />
+                    <span className="terminal-dot dot-yellow" />
+                    <span className="terminal-dot dot-green" />
+                  </div>
+                  <span>DISPATCH_FORM // SSL_TLS</span>
+                </div>
+
                 <form
                   onSubmit={(e) => e.preventDefault()}
                   style={{
@@ -295,27 +307,29 @@ const Contact = () => {
                       style={{
                         display: "block",
                         marginBottom: "0.4rem",
-                        color: "var(--text-secondary)",
-                        fontSize: "0.85rem",
+                        color: "var(--text-muted)",
+                        fontSize: "0.8rem",
+                        fontFamily: "var(--font-mono)",
                         fontWeight: "500",
                       }}
                     >
-                      Name
+                      OPERATIVE_NAME
                     </label>
                     <input
                       type="text"
                       id="name"
                       style={{
                         width: "100%",
-                        padding: "0.8rem 1rem",
-                        background: "rgba(0,0,0,0.3)",
+                        padding: "0.75rem 0.9rem",
+                        background: "rgba(3, 7, 18, 0.8)",
                         border: "1px solid var(--border-color)",
-                        borderRadius: "8px",
+                        borderRadius: "6px",
                         color: "var(--text-primary)",
                         outline: "none",
-                        fontSize: "0.95rem",
+                        fontFamily: "var(--font-mono)",
+                        fontSize: "0.9rem",
                       }}
-                      placeholder="Your Name"
+                      placeholder="e.g. Hiring Manager / Security Lead"
                     />
                   </div>
 
@@ -325,27 +339,29 @@ const Contact = () => {
                       style={{
                         display: "block",
                         marginBottom: "0.4rem",
-                        color: "var(--text-secondary)",
-                        fontSize: "0.85rem",
+                        color: "var(--text-muted)",
+                        fontSize: "0.8rem",
+                        fontFamily: "var(--font-mono)",
                         fontWeight: "500",
                       }}
                     >
-                      Email
+                      RETURN_EMAIL_ADDRESS
                     </label>
                     <input
                       type="email"
                       id="email"
                       style={{
                         width: "100%",
-                        padding: "0.8rem 1rem",
-                        background: "rgba(0,0,0,0.3)",
+                        padding: "0.75rem 0.9rem",
+                        background: "rgba(3, 7, 18, 0.8)",
                         border: "1px solid var(--border-color)",
-                        borderRadius: "8px",
+                        borderRadius: "6px",
                         color: "var(--text-primary)",
                         outline: "none",
-                        fontSize: "0.95rem",
+                        fontFamily: "var(--font-mono)",
+                        fontSize: "0.9rem",
                       }}
-                      placeholder="your.email@example.com"
+                      placeholder="contact@enterprise.com"
                     />
                   </div>
 
@@ -355,28 +371,30 @@ const Contact = () => {
                       style={{
                         display: "block",
                         marginBottom: "0.4rem",
-                        color: "var(--text-secondary)",
-                        fontSize: "0.85rem",
+                        color: "var(--text-muted)",
+                        fontSize: "0.8rem",
+                        fontFamily: "var(--font-mono)",
                         fontWeight: "500",
                       }}
                     >
-                      Message
+                      TRANSMISSION_PAYLOAD
                     </label>
                     <textarea
                       id="message"
                       rows="4"
                       style={{
                         width: "100%",
-                        padding: "0.8rem 1rem",
-                        background: "rgba(0,0,0,0.3)",
+                        padding: "0.75rem 0.9rem",
+                        background: "rgba(3, 7, 18, 0.8)",
                         border: "1px solid var(--border-color)",
-                        borderRadius: "8px",
+                        borderRadius: "6px",
                         color: "var(--text-primary)",
                         outline: "none",
                         resize: "vertical",
-                        fontSize: "0.95rem",
+                        fontFamily: "var(--font-mono)",
+                        fontSize: "0.9rem",
                       }}
-                      placeholder="Share an internship opportunity, project collaboration, or security inquiry..."
+                      placeholder="Discuss Summer 2027 internship, adversarial ML defense, Bug Bounty collaboration, or security inquiry..."
                     />
                   </div>
 
@@ -388,10 +406,10 @@ const Contact = () => {
                     style={{
                       width: "100%",
                       marginTop: "0.5rem",
-                      padding: "0.9rem",
+                      padding: "0.85rem",
                     }}
                   >
-                    Send Message <Send size={18} />
+                    <Send size={16} /> TRANSMIT_MESSAGE
                   </motion.button>
                 </form>
               </div>

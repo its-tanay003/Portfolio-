@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Calendar, CheckCircle2, Globe, Building2, ShieldAlert, Briefcase } from "lucide-react";
+import { Calendar, CheckCircle2, Globe, Building2, ShieldAlert, Briefcase, Share2 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
@@ -13,6 +13,20 @@ const Experience = () => {
   const yParallax = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   const experiences = [
+    {
+      title: "Head of Social Media",
+      company: "Department of Student Research and Project (DSRP), LPU",
+      type: "University Department • Research & Project Promotion",
+      location: "On-site / Hybrid",
+      duration: "Apr 2026 – Present",
+      logId: "LOG // DSRP_LEADERSHIP",
+      icon: <Share2 size={20} color="#a855f7" />,
+      badgeColor: "#a855f7",
+      points: [
+        "Spearhead digital outreach, social media strategy, and brand visibility for the Department of Student Research and Project (DSRP).",
+        "Direct the digital promotion of high-impact student innovations, research publications, and technical project milestones to drive engagement across university ecosystems.",
+      ],
+    },
     {
       title: "Head of Marketing",
       company: "CREST",

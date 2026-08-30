@@ -18,7 +18,8 @@ import {
   MapPin, 
   PenTool,
   ShieldAlert,
-  Binary
+  Binary,
+  Share2
 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Tilt from "react-parallax-tilt";
@@ -422,17 +423,31 @@ const About = () => {
                   Seeking high-impact roles in <strong style={{ color: "var(--text-primary)" }}>Software Engineering, Cybersecurity, Adversarial AI Defense, or Product Engineering</strong>. Available for on-site & remote global relocation.
                 </p>
 
-                {/* CREST Leadership Callout */}
-                <div style={{ marginTop: "auto", background: "rgba(3, 7, 18, 0.8)", padding: "0.9rem", borderRadius: "8px", border: "1px solid rgba(168,85,247,0.25)" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.3rem" }}>
-                    <Flame size={15} color="var(--accent-purple)" />
-                    <span style={{ fontSize: "0.84rem", color: "var(--text-primary)", fontWeight: "600" }}>
-                      CREST • Head of Marketing
-                    </span>
+                {/* Leadership Callouts: DSRP & CREST */}
+                <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                  <div style={{ background: "rgba(3, 7, 18, 0.8)", padding: "0.85rem", borderRadius: "8px", border: "1px solid rgba(168,85,247,0.25)" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.25rem" }}>
+                      <Share2 size={15} color="var(--accent-purple)" />
+                      <span style={{ fontSize: "0.84rem", color: "var(--text-primary)", fontWeight: "600" }}>
+                        DSRP • Head of Social Media
+                      </span>
+                    </div>
+                    <p style={{ fontSize: "0.78rem", color: "var(--text-secondary)", lineHeight: "1.45", margin: 0 }}>
+                      Leading digital visibility & showcasing student innovations at Department of Student Research and Project (Apr 2026 – Present).
+                    </p>
                   </div>
-                  <p style={{ fontSize: "0.78rem", color: "var(--text-secondary)", lineHeight: "1.5" }}>
-                    Directing marketing strategies, student engagement, and brand reach for full-time university student organization (Apr 2026 – Present).
-                  </p>
+
+                  <div style={{ background: "rgba(3, 7, 18, 0.8)", padding: "0.85rem", borderRadius: "8px", border: "1px solid rgba(0,240,255,0.25)" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.25rem" }}>
+                      <Flame size={15} color="var(--accent-cyan)" />
+                      <span style={{ fontSize: "0.84rem", color: "var(--text-primary)", fontWeight: "600" }}>
+                        CREST • Head of Marketing
+                      </span>
+                    </div>
+                    <p style={{ fontSize: "0.78rem", color: "var(--text-secondary)", lineHeight: "1.45", margin: 0 }}>
+                      Directing marketing strategies, student engagement, and brand reach for student organization (Apr 2026 – Present).
+                    </p>
+                  </div>
                 </div>
               </div>
             </Tilt>

@@ -1,52 +1,10 @@
-import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Shield, ChevronDown, Lock, Activity } from 'lucide-react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Icosahedron, MeshDistortMaterial, Float, Environment, ContactShadows } from '@react-three/drei';
-
-// The abstract 3D object for the Hero section
-const CyberCore = () => {
-  const meshRef = useRef();
-
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.25;
-      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.35;
-    }
-  });
-
-  return (
-    <Float speed={2.5} rotationIntensity={1.2} floatIntensity={2}>
-      <mesh ref={meshRef} scale={1.6}>
-        <Icosahedron args={[1, 0]}>
-          <MeshDistortMaterial
-            color="#00f0ff"
-            attach="material"
-            distort={0.45}
-            speed={2.2}
-            roughness={0.15}
-            metalness={0.85}
-            wireframe={true}
-          />
-        </Icosahedron>
-        {/* Inner solid core */}
-        <Icosahedron args={[0.75, 1]} scale={0.8}>
-          <meshStandardMaterial
-            color="#10b981"
-            roughness={0.1}
-            metalness={1}
-            emissive="#10b981"
-            emissiveIntensity={0.6}
-          />
-        </Icosahedron>
-      </mesh>
-    </Float>
-  );
-};
+import { Shield, ChevronDown, Lock, Activity, Sparkles, ShieldCheck, Terminal, Cpu } from 'lucide-react';
+import Tilt from 'react-parallax-tilt';
 
 const Hero = () => {
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 800], [0, 150]);
+  const y1 = useTransform(scrollY, [0, 800], [0, 120]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
   const stats = [
@@ -74,8 +32,9 @@ const Hero = () => {
       />
 
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-        <div className="grid grid-2" style={{ alignItems: 'center', gap: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', alignItems: 'center', gap: '3rem' }}>
           
+          {/* Left Column: Heading & Information */}
           <motion.div 
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -154,81 +113,139 @@ const Hero = () => {
             </div>
           </motion.div>
 
+          {/* Right Column: Operative Command Card (Replaces the 3D ball) */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.85 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.4, type: "spring" }}
-            style={{ position: 'relative', height: '480px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+            transition={{ duration: 0.8, delay: 0.35, type: "spring" }}
+            style={{ display: 'flex', justifyContent: 'center' }}
           >
-            {/* Ambient Background Glow for 3D object */}
-            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '340px', height: '340px', background: 'radial-gradient(circle, rgba(0, 240, 255, 0.2) 0%, rgba(16, 185, 129, 0.05) 50%, transparent 70%)', filter: 'blur(50px)', zIndex: 0 }} />
-            
-            {/* Cyber HUD Targeting Ring Overlay */}
-            <div 
-              style={{
-                position: 'absolute',
-                width: '380px',
-                height: '380px',
-                border: '1px dashed rgba(0, 240, 255, 0.25)',
-                borderRadius: '50%',
-                pointerEvents: 'none',
-                zIndex: 1,
-              }}
-            />
-            
-            <div style={{ width: '100%', height: '100%', position: 'relative', zIndex: 2 }}>
-              <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-                <ambientLight intensity={0.6} />
-                <directionalLight position={[10, 10, 10]} intensity={1.2} color="#00f0ff" />
-                <directionalLight position={[-10, -10, -10]} intensity={0.8} color="#10b981" />
-                
-                <CyberCore />
-                
-                <Environment preset="night" />
-                <ContactShadows position={[0, -2, 0]} opacity={0.5} scale={10} blur={2.5} far={4} color="#00f0ff" />
-              </Canvas>
-            </div>
-            
-            {/* Profile Picture Overlay Cyber Badge */}
-            <motion.div
-              style={{
-                position: 'absolute',
-                bottom: '15px',
-                right: '10px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.85rem',
-                padding: '0.6rem 1.1rem 0.6rem 0.6rem',
-                background: 'rgba(3, 7, 18, 0.9)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid var(--border-color)',
-                borderRadius: '50px',
-                zIndex: 4,
-                boxShadow: '0 10px 30px rgba(0,0,0,0.8), 0 0 15px rgba(0, 240, 255, 0.2)'
-              }}
-              whileHover={{ scale: 1.05 }}
+            <Tilt
+              tiltMaxAngleX={6}
+              tiltMaxAngleY={6}
+              glareEnable={true}
+              glareMaxOpacity={0.12}
+              glarePosition="all"
+              scale={1.02}
+              transitionSpeed={1200}
+              style={{ width: '100%', maxWidth: '460px' }}
             >
-              <img
-                src="/photo.jpg"
-                alt="Tanay Tanishk"
-                style={{
-                  width: '52px',
-                  height: '52px',
-                  borderRadius: '50%',
-                  objectFit: 'cover',
-                  border: '2px solid var(--accent-cyan)'
+              <div 
+                className="cyber-card" 
+                style={{ 
+                  padding: '2.2rem', 
+                  borderTop: '3px solid var(--accent-cyan)',
+                  boxShadow: '0 20px 50px rgba(0,0,0,0.85), 0 0 20px rgba(0, 240, 255, 0.2)'
                 }}
-              />
-              <div>
-                <div style={{ fontSize: '0.88rem', fontWeight: '700', color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}>
-                  Tanay Tanishk
+              >
+                {/* Terminal Window Header */}
+                <div className="terminal-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.4rem', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '0.8rem' }}>
+                  <div className="terminal-dots" style={{ display: 'flex', gap: '6px' }}>
+                    <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#ff5f56', display: 'inline-block' }} />
+                    <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#ffbd2e', display: 'inline-block' }} />
+                    <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#27c93f', display: 'inline-block' }} />
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent-cyan)', fontFamily: 'var(--font-mono)', fontSize: '0.74rem', fontWeight: '700' }}>
+                    <Terminal size={13} />
+                    <span>OPERATIVE_DOSSIER // SEC-001</span>
+                  </div>
                 </div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--accent-green)', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                  <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--accent-green)', boxShadow: '0 0 6px var(--accent-green)' }} />
-                  Target: Summer '27 Intern
+
+                {/* Profile Identity Row */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.4rem', marginBottom: '1.8rem' }}>
+                  <div style={{ position: 'relative' }}>
+                    <img
+                      src="/photo.jpg"
+                      alt="Tanay Tanishk"
+                      style={{
+                        width: '84px',
+                        height: '84px',
+                        borderRadius: '16px',
+                        objectFit: 'cover',
+                        border: '2px solid var(--accent-cyan)',
+                        boxShadow: '0 0 20px rgba(0, 240, 255, 0.35)'
+                      }}
+                    />
+                    <span 
+                      style={{ 
+                        position: 'absolute', 
+                        bottom: '-3px', 
+                        right: '-3px',
+                        width: '12px',
+                        height: '12px',
+                        borderRadius: '50%',
+                        backgroundColor: 'var(--accent-green)',
+                        boxShadow: '0 0 8px var(--accent-green)',
+                        border: '2px solid var(--bg-primary)'
+                      }} 
+                    />
+                  </div>
+
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem' }}>
+                      <h3 style={{ fontSize: '1.4rem', color: 'var(--text-primary)', margin: 0 }}>Tanay Tanishk</h3>
+                      <ShieldCheck size={18} color="var(--accent-green)" />
+                    </div>
+                    <div style={{ fontSize: '0.82rem', color: 'var(--accent-cyan)', fontFamily: 'var(--font-mono)', fontWeight: '700' }}>
+                      Research Assistant @ AI Threat Lab
+                    </div>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', marginTop: '0.2rem' }}>
+                      Lovely Professional University
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tactical Status Grid */}
+                <div 
+                  style={{
+                    padding: '1.2rem',
+                    background: 'rgba(5, 10, 20, 0.65)',
+                    border: '1px solid rgba(0, 240, 255, 0.15)',
+                    borderRadius: '10px',
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: '1rem',
+                    marginBottom: '1.5rem'
+                  }}
+                >
+                  <div>
+                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>TARGET ROLE</div>
+                    <div style={{ fontSize: '0.86rem', color: 'var(--accent-green)', fontWeight: '700', fontFamily: 'var(--font-mono)', marginTop: '0.2rem' }}>
+                      Summer 2027 Intern
+                    </div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>SECURITY FOCUS</div>
+                    <div style={{ fontSize: '0.86rem', color: 'var(--accent-cyan)', fontWeight: '700', fontFamily: 'var(--font-mono)', marginTop: '0.2rem' }}>
+                      Adversarial AI Defense
+                    </div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>RELOCATION</div>
+                    <div style={{ fontSize: '0.86rem', color: 'var(--text-primary)', fontWeight: '600', fontFamily: 'var(--font-mono)', marginTop: '0.2rem' }}>
+                      Global Availability
+                    </div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>ACADEMICS</div>
+                    <div style={{ fontSize: '0.86rem', color: 'var(--accent-green)', fontWeight: '700', fontFamily: 'var(--font-mono)', marginTop: '0.2rem' }}>
+                      Top 1% Global Cohort
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer Security Badge */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '1rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.74rem', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
+                    <Cpu size={13} color="var(--accent-cyan)" />
+                    <span>DEFENSE_ACTIVE</span>
+                  </div>
+                  <span style={{ padding: '0.25rem 0.65rem', fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--accent-cyan)', background: 'rgba(0, 240, 255, 0.1)', border: '1px solid rgba(0, 240, 255, 0.3)', borderRadius: '4px', fontWeight: '700' }}>
+                    AUTHENTICATED
+                  </span>
                 </div>
               </div>
-            </motion.div>
+            </Tilt>
           </motion.div>
         </div>
 
@@ -252,6 +269,7 @@ const Hero = () => {
           {stats.map((stat, idx) => (
             <div key={idx} style={{ borderLeft: '2px solid var(--accent-cyan)', paddingLeft: '1rem' }}>
               <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', letterSpacing: '0.08em' }}>
+                <Sparkles size={11} color="var(--accent-cyan)" />
                 {stat.label}
               </div>
               <div style={{ fontSize: '1.4rem', fontWeight: '700', color: 'var(--text-primary)', margin: '0.2rem 0', fontFamily: 'var(--font-main)' }}>
